@@ -3,11 +3,6 @@ import AppBar from "@mui/material/AppBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createBrowserHistory } from "history";
 import RecipeCard from "../Recipe/RecipeCard";
@@ -15,19 +10,13 @@ import CustomRecipeCard from "../Recipe/CustomRecipeCard";
 import { useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import CircularProgress from "@mui/material/CircularProgress";
-import SearchBar from "material-ui-search-bar";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Checkbox from "@mui/material/Checkbox";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import Radio from "@mui/material/Radio";
 import Button from "@mui/material/Button";
 import CustomIngredientsTable from "../Recipe/CustomIngredientsTable";
+import { Snackbar } from "@mui/material";
+import { Alert } from "@mui/material";
 import "./SavedRecipes.css";
 import { clearList } from "../../store/grocery-list";
 
@@ -38,6 +27,7 @@ export default function SavedRecipes() {
   const [totalRecipes, setTotalRecipes] = useState(null);
   const [pageCount, setPageCount] = useState(5);
   const [page, setPage] = useState(1);
+  const [alertMessage, setAlertMessage] = useState("");
   const userId = useSelector((state) => state.user.userId);
   const groceryList = useSelector((state) => state.groceryList.recipes);
   const groceryListCount = useSelector((state) => state.groceryList.count);
@@ -102,10 +92,14 @@ export default function SavedRecipes() {
         console.log(res);
         if (res.data.list) {
           dispatch(clearList());
-          history.replace("/grocery-lists");
+          setAlertMessage("Created list");
         }
       })
       .catch((err) => console.log(err));
+  };
+
+  const alertClosedHandler = () => {
+    setAlertMessage("");
   };
 
   //const searchRecipes = (query) => {};
@@ -128,6 +122,19 @@ export default function SavedRecipes() {
       >
         Create Grocery List [{groceryListCount}]
       </Button>
+      <Snackbar
+        open={alertMessage !== ""}
+        autoHideDuration={4000}
+        onClose={alertClosedHandler}
+      >
+        <Alert
+          onClose={alertClosedHandler}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          {alertMessage}
+        </Alert>
+      </Snackbar>
       {loading && (
         <CircularProgress sx={{ margin: "auto" }} color="secondary" />
       )}
