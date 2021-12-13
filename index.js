@@ -1,4 +1,4 @@
-import routes from "./routes/routes.js";
+import routes from "./server/routes/routes.js";
 
 import express from "express";
 import cors from "cors";
@@ -13,14 +13,13 @@ app.use(cors());
 app.use(express.json());
 app.use("/", routes);
 
-const directory = "C:Users\\rculb\\OneDrive\\Desktop\\TheApronApp\\";
+const __dirname = (__dirname = path.resolve());
 
-app.use(express.static(directory + "client" + "\\build"));
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(directory + "client" + "\\build" + "\\index.html");
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
-
 const PORT = process.env.PORT;
 
 mongoose
