@@ -5,8 +5,6 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 
 dotenv.config();
 
@@ -14,14 +12,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", routes);
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
 
-// app.use(express.static(path.join(__dirname, "client", "build")));
+const directory = "C:Users\\rculb\\OneDrive\\Desktop\\TheApronApp\\";
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
+app.use(express.static(path.join(__dirname, "client", "build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 const PORT = process.env.PORT;
 
