@@ -15,10 +15,10 @@ app.use("/", routes);
 
 const directory = "C:Users\\rculb\\OneDrive\\Desktop\\TheApronApp\\";
 
-app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(directory, "client", "build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(directory, "client", "build", "index.html"));
 });
 
 const PORT = process.env.PORT;
