@@ -43,18 +43,20 @@ export default function SavedRecipes() {
   const groceryListCount = useSelector((state) => state.groceryList.count);
   const dispatch = useDispatch();
   const history = createBrowserHistory({ forceRefresh: true });
-  console.log(userId);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (totalRecipes == null) {
       setLoading(true);
       axios
-        .get(`${process.env.REACT_APP_API_SERVICE_URL}/api/get-saved-recipes?userId=${userId}`, {
-          headers: {
-            "access-token": localStorage.getItem("token"),
-          },
-        })
+        .get(
+          `${process.env.REACT_APP_API_SERVICE_URL}/api/get-saved-recipes?userId=${userId}`,
+          {
+            headers: {
+              "access-token": localStorage.getItem("token"),
+            },
+          }
+        )
         .then((res) => {
           if (res.data.recipes.length == 0) {
             setLoading(false);
@@ -86,13 +88,16 @@ export default function SavedRecipes() {
 
   const createGroceryList = () => {
     axios
-      .post(`${process.env.REACT_APP_API_SERVICE_URL}/api/aggregate-grocery-lists`, {
-        userId: userId,
-        recipes: groceryList,
-        headers: {
-          "access-token": localStorage.getItem("token"),
-        },
-      })
+      .post(
+        `${process.env.REACT_APP_API_SERVICE_URL}/api/aggregate-grocery-lists`,
+        {
+          userId: userId,
+          recipes: groceryList,
+          headers: {
+            "access-token": localStorage.getItem("token"),
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         if (res.data.list) {

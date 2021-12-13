@@ -25,9 +25,6 @@ const SavedCalendarDisplayRecipeCard = (props) => {
   const [iconColor, setIconColor] = useState("#A9A9A9");
 
   const deleteRecipe = (props) => {
-    console.log(userId);
-    console.log(props.date);
-    console.log(props.recipeId);
     axios
       .delete(
         `${process.env.REACT_APP_API_SERVICE_URL}/api/delete-recipe-from-date`,
@@ -41,7 +38,6 @@ const SavedCalendarDisplayRecipeCard = (props) => {
         }
       )
       .then((res) => {
-        console.log(res);
         setAlertMessage("Deleted from calendar");
       })
       .catch((err) => {

@@ -33,7 +33,6 @@ const Home = () => {
     seafood: false,
   });
   const [loading, setLoading] = useState(false);
-  console.log(process.env.REACT_APP_API_SERVICE_URL);
 
   useEffect(() => {
     if (totalRecipes.length === 0) {

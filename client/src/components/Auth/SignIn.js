@@ -35,7 +35,6 @@ export default function SignIn() {
           },
         })
         .then((res) => {
-          console.log(res);
           history.replace("/");
         })
         //Use this code block if user not authenticated
@@ -57,7 +56,6 @@ export default function SignIn() {
       .then((res) => {
         // res.data.message will contain necessary info about why
         // sign up/in failed
-        console.log(res);
         if (res.data.message) {
           // Handler server error in this code block
           setErrorMessage(res.data.message);

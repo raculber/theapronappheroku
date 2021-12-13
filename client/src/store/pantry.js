@@ -11,7 +11,6 @@ const pantrySlice = createSlice({
       state.recipes.push(newRecipe.recipe);
     },
     clearRecipes(state) {
-      console.log("Clear");
       state.recipes = [];
     },
   },

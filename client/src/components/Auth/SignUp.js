@@ -38,7 +38,6 @@ export default function SignUp() {
           },
         })
         .then((res) => {
-          console.log(res);
           history.replace("/");
         })
         //Use this code block if user not authenticated
@@ -58,13 +57,11 @@ export default function SignUp() {
       reenteredPassword: data.get("reenteredPassword"),
     };
     // eslint-disable-next-line no-console
-    console.log(userInfo);
     axios
       .post(`${process.env.REACT_APP_API_SERVICE_URL}/api/sign-up`, userInfo)
       .then((res) => {
         // res.data.message will contain necessary info about why
         // sign up/in failed
-        console.log(res);
         if (res.data.message) {
           // Handler server error in this code block
           setErrorMessage(res.data.message);

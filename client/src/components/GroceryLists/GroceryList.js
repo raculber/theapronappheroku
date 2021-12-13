@@ -11,14 +11,16 @@ const GroceryList = (props) => {
   console.log(props.list.items);
   const deleteGroceryList = () => {
     axios
-      .delete(`${process.env.REACT_APP_API_SERVICE_URL}/api/delete-grocery-list`, {
-        data: { userId: userId, name: props.list.name },
-        headers: {
-          "access-token": localStorage.getItem("token"),
-        },
-      })
+      .delete(
+        `${process.env.REACT_APP_API_SERVICE_URL}/api/delete-grocery-list`,
+        {
+          data: { userId: userId, name: props.list.name },
+          headers: {
+            "access-token": localStorage.getItem("token"),
+          },
+        }
+      )
       .then((res) => {
-        console.log(res);
         if (res.data.message == "Removed grocery list") props.getGroceryLists();
       })
       .catch((err) => {

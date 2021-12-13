@@ -48,7 +48,6 @@ const RecipeCard = (props) => {
     setAlertMessage("");
   };
   const recipeSaveHandler = () => {
-    console.log(props.recipe);
     let ingredients = [];
     props.recipe.nutrition.ingredients.forEach((ingredient) => {
       ingredients.push({

@@ -42,7 +42,6 @@ const CustomRecipeCard = (props) => {
         }
       )
       .then((res) => {
-        console.log(res);
         setIconColor(res.data.recipeExists ? "#FF0000" : "#A9A9A9");
       })
       .catch((err) => {

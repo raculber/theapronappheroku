@@ -119,7 +119,6 @@ class Calendar extends React.Component {
             }
           )
           .then((res) => {
-            console.log(res);
             this.setState({
               recipes: res.data.recipes,
               // showModal: true,
@@ -153,7 +152,6 @@ class Calendar extends React.Component {
         }
       )
       .then((res) => {
-        console.log(res);
         this.setState({
           selectedDay: d,
           showModal: true,

@@ -50,7 +50,6 @@ const Pantry = () => {
 
   useEffect(() => {
     if (allNull) dispatch(clearRecipes());
-    console.log("In use effect");
     axios
       .get(
         `${process.env.REACT_APP_API_SERVICE_URL}/api/get-ingredients?userId=${userId}`,
@@ -67,10 +66,7 @@ const Pantry = () => {
         console.log(err);
       });
   }, []);
-  console.log(recipes);
   const removeIngredient = (name) => {
-    console.log("Remove");
-    console.log(name);
     axios
       .delete(
         `${process.env.REACT_APP_API_SERVICE_URL}/api/delete-ingredient`,
@@ -96,7 +92,6 @@ const Pantry = () => {
   };
 
   const addIngredient = () => {
-    console.log(selectedIngredient);
     axios
       .post(`${process.env.REACT_APP_API_SERVICE_URL}/api/add-ingredient`, {
         userId: userId,
@@ -107,7 +102,6 @@ const Pantry = () => {
         },
       })
       .then((res) => {
-        console.log(res);
         if (res.data.message) {
           setError(res.data.message);
         } else {
@@ -118,7 +112,6 @@ const Pantry = () => {
           };
           let newIngredients = ingredients;
           newIngredients.push(addedIngredient);
-          console.log(newIngredients);
           setIngredients(newIngredients);
           forceUpdate();
           // setIngredients(ingredients.push(addedIngredient));
@@ -157,7 +150,6 @@ const Pantry = () => {
           }
         )
         .then((res) => {
-          console.log(res);
           setIngredientSearch(res.data.results);
         })
         .catch((err) => {
@@ -184,7 +176,6 @@ const Pantry = () => {
         }
       )
       .then((res) => {
-        console.log(res);
         let newRecipes = [];
         res.data.results.forEach((recipe) => {
           axios
@@ -210,7 +201,6 @@ const Pantry = () => {
               console.log(err);
             });
         });
-        console.log(newRecipes);
         setRecipes(newRecipes);
         setLoading(false);
       })

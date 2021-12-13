@@ -30,7 +30,6 @@ function Navbar(props) {
     history.push("/");
     setLoggedIn(false);
   };
-  console.log(selectedTab);
   return (
     <div className="navbar">
       <div className="leftSide" id={openLinks ? "open" : "close"}>
