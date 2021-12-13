@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/", routes);
 
-const __dirname = (__dirname = path.resolve());
+const __dirname = path.resolve();
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
