@@ -171,7 +171,7 @@ export default function SignUp() {
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link
-                  href="https://theapronapp.herokuapp.com/sign-in"
+                  href="https://the-apron-app.herokuapp.com/sign-in"
                   variant="body2"
                 >
                   Already have an account? Sign in
