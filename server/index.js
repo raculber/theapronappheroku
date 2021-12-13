@@ -5,6 +5,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 dotenv.config();
 
@@ -12,7 +14,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", routes);
-__dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
