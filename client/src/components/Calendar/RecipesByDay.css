@@ -1,0 +1,11 @@
+.recipes {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.recipes-on-day {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

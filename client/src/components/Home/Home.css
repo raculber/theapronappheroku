@@ -1,0 +1,21 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.home-recipes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 700px) {
+  .search {
+    flex-direction: column;
+  }
+}

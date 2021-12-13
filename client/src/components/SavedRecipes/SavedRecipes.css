@@ -1,0 +1,25 @@
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+@media only screen and (min-width: 650px) {
+  .create-button {
+    width: 40%;
+    margin: 15px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .create-button {
+    width: 60%;
+    margin: auto;
+    display: block;
+  }
+}
+.saved-recipes {
+  margin-left: 400px;
+  margin-top: -300px;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,26 @@
+.logoutButton {
+  background-color: #252424;
+  border-radius: 2px;
+  border: 2px solid white;
+  color: white;
+  padding: 15px 32px;
+  margin-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+@media only screen and (max-width: 600px) {
+  .logoutButton {
+    padding: 12px 20px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+}
+.logoutButton:hover {
+  background-color: #383636 !important;
+  cursor: pointer;
+}
+.logoutButton:active {
+  background-color: #383636 !important;
+  cursor: pointer;
+}

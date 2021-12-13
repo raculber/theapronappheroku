@@ -1,0 +1,8 @@
+.modal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  justify-content: center;
+  z-index: 9999;
+}

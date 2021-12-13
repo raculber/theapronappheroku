@@ -1,0 +1,16 @@
+.savedrecipes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .search {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  

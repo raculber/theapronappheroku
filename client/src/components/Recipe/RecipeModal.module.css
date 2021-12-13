@@ -1,0 +1,13 @@
+.imageAndSummary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 1180px) {
+  .imageAndSummary {
+    flex-direction: column;
+    text-align: left;
+  }
+}

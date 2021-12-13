@@ -1,0 +1,45 @@
+.profile {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.ButtonModal {
+  margin-top: -15px;
+  margin-left: 75px;
+}
+
+.userBox {
+  margin-left: -50px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+  background-image: linear-gradient(175deg, rgba(0, 0, 0, 0) 95%, #4c584a 95%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 95%, #657463 95%),
+    linear-gradient(175deg, rgba(0, 0, 0, 0) 90%, #7c916f 90%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 90%, #8aa07d 90%),
+    linear-gradient(175deg, rgba(0, 0, 0, 0) 85%, #a3b994 85%),
+    linear-gradient(85deg, rgba(0, 0, 0, 0) 85%, #a8c298 85%);
+}
+
+.welcomeUser {
+  margin-top: -15px;
+}
+
+.AvatarImage {
+  margin-left: 50px;
+}
+
+.label {
+  margin-left: 600px;
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.FavLabel {
+  margin-left: 650px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
