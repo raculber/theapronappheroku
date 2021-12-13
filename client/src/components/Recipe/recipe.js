@@ -388,7 +388,7 @@ const recipe = {
   readyInMinutes: 30,
   servings: 8,
   sourceUrl:
-    "http://fullbellysisters.blogspot.com/2012/01/cauliflower-fried-rice-more-veggies.html",
+    "https://fullbellysisters.blogspot.com/2012/01/cauliflower-fried-rice-more-veggies.html",
   image: "https://spoonacular.com/recipeImages/716426-312x231.jpg",
   imageType: "jpg",
   nutrition: {

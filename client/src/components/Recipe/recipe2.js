@@ -21,7 +21,7 @@ const recipe2 = {
   title: "Pasta With Tuna",
   readyInMinutes: 45,
   servings: 4,
-  sourceUrl: "http://www.foodista.com/recipe/K6QWSKQM/pasta-with-tuna",
+  sourceUrl: "https://www.foodista.com/recipe/K6QWSKQM/pasta-with-tuna",
   image: "https://spoonacular.com/recipeImages/654959-312x231.jpg",
   imageType: "jpg",
   nutrition: {
