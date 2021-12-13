@@ -33,12 +33,15 @@ const Home = () => {
     seafood: false,
   });
   const [loading, setLoading] = useState(false);
+  console.log(process.env.REACT_APP_API_SERVICE_URL);
 
   useEffect(() => {
     if (totalRecipes.length === 0) {
       setLoading(true);
       axios
-        .get(`${process.env.REACT_APP_API_SERVICE_URL}/api/get-random-recipes?number=100`)
+        .get(
+          `${process.env.REACT_APP_API_SERVICE_URL}/api/get-random-recipes?number=100`
+        )
         .then((res) => {
           setTotalRecipes(res.data.recipes.results);
           setRecipes(res.data.recipes.results.slice(0, 20));

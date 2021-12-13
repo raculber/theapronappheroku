@@ -9,8 +9,6 @@ import SignUp from "./components/Auth/SignUp";
 import Pantry from "./components/Pantry/Pantry";
 import Profile from "./components/Profile/Profile";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Redirect } from "react-router";
-import SavedRecipes from "./components/SavedRecipes/savedRecipes";
 import GroceryLists from "./components/GroceryLists/GroceryLists";
 
 // App component
