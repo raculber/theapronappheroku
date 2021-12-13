@@ -4,7 +4,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import path from "path";
+// import path from "path";
 
 dotenv.config();
 
@@ -15,10 +15,10 @@ app.use("/", routes);
 
 const directory = "C:Users\\rculb\\OneDrive\\Desktop\\TheApronApp\\";
 
-app.use(express.static(path.join(directory, "client", "build")));
+app.use(express.static(directory + "client" + "\\build"));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(directory, "client", "build", "index.html"));
+  res.sendFile(directory + "client" + "\\build" + "\\index.html");
 });
 
 const PORT = process.env.PORT;
