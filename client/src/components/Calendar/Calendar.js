@@ -144,7 +144,8 @@ class Calendar extends React.Component {
     const date = month + "/" + day + "/" + year;
     axios
       .get(
-        "https://localhost:8000/api/get-saved-recipes?userId=" + this.userId,
+        "https://theapronapp.herokuapp.com/api/get-saved-recipes?userId=" +
+          this.userId,
         {
           headers: {
             "access-token": localStorage.getItem("token"),
